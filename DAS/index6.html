@@ -1,0 +1,386 @@
+<!--- carosual -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Flavor</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --choco-dark: #2b1b17;
+            /* Deep Dark Chocolate */
+            --choco-med: #5d4037;
+            /* Medium Chocolate */
+            --bg-beige: #e8e0d5;
+            /* Creamy background */
+            --card-white: #ffffff;
+            --accent-green: #89a688;
+            /* Sage green for toggle/button (from previous branding) */
+            --accent-gold: #d4af37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg-beige);
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            /* Prevent body scroll */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Main Container */
+        .selection-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+
+        /* --- Left Dark Panel --- */
+        .left-panel {
+            width: 40%;
+            background-color: var(--choco-dark);
+            height: 100%;
+            color: white;
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+            /* The Organic Curve Effect */
+            border-top-right-radius: 50% 100%;
+            border-bottom-right-radius: 50% 100%;
+            box-shadow: 10px 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .step-counter {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            color: #aca09b;
+        }
+
+        .step-counter span.active {
+            color: white;
+            font-weight: bold;
+        }
+
+        .left-panel h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .dots {
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 5px;
+        }
+
+        .instruction-list {
+            list-style: none;
+            margin-bottom: 50px;
+        }
+
+        .instruction-list li {
+            font-size: 1.1rem;
+            color: #d7ccc8;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Next Button */
+        .next-btn {
+            width: fit-content;
+            background-color: var(--accent-green);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .next-btn:hover {
+            transform: scale(1.05);
+            background-color: #769175;
+        }
+
+        /* --- Right Carousel Section --- */
+        .carousel-area {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            /* Scroll settings */
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-left: 50px;
+            /* Space so first card isn't hidden under curve */
+            padding-right: 50px;
+            /* Hide scrollbar */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .carousel-area::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Individual Card (Pill Shape) */
+        .card {
+            flex: 0 0 260px;
+            /* Fixed width */
+            height: 420px;
+            background-color: var(--card-white);
+            border-radius: 130px;
+            /* Makes it a pill shape */
+            margin-right: 30px;
+            scroll-snap-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(62, 39, 35, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Image floating at top */
+        .img-box {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin-top: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+        }
+
+        .img-box img {
+            width: 140%;
+            /* Make it pop out */
+            height: auto;
+            filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.25));
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover .img-box img {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Card Text */
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--choco-dark);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .card p {
+            color: #8d6e63;
+            font-size: 0.8rem;
+            text-align: center;
+            line-height: 1.4;
+            padding: 0 15px;
+            margin-bottom: auto;
+            /* Pushes toggle to bottom */
+        }
+
+        /* Toggle Switch */
+        .toggle-switch {
+            width: 60px;
+            height: 30px;
+            background-color: #ddd;
+            border-radius: 30px;
+            position: relative;
+            margin-bottom: 30px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        /* Hidden checkbox logic */
+        .toggle-input {
+            display: none;
+        }
+
+        .toggle-knob {
+            width: 26px;
+            height: 26px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Checked State */
+        .toggle-input:checked+.toggle-switch {
+            background-color: var(--accent-green);
+        }
+
+        .toggle-input:checked+.toggle-switch .toggle-knob {
+            transform: translateX(30px);
+        }
+
+        /* Price tag */
+        .price {
+            font-weight: 700;
+            color: var(--choco-med);
+            margin-bottom: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .selection-wrapper {
+                flex-direction: column;
+                overflow-y: auto;
+            }
+
+            body {
+                overflow: auto;
+                height: auto;
+            }
+
+            .left-panel {
+                width: 100%;
+                height: auto;
+                padding: 40px;
+                border-radius: 0 0 50px 50px;
+                /* Curve at bottom for mobile */
+                text-align: center;
+            }
+
+            .instruction-list li {
+                justify-content: center;
+            }
+
+            .next-btn {
+                margin: 0 auto;
+            }
+
+            .carousel-area {
+                width: 100%;
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="selection-wrapper">
+
+        <!-- Left Panel: Controls & Info -->
+        <div class="left-panel">
+            <div class="step-counter">
+                <span class="active">1</span> 2 3
+            </div>
+
+            <h1>Choose your <br>indulgence</h1>
+
+            <div class="dots">••••••</div>
+            <p style="margin-bottom: 20px; font-size: 0.9rem; opacity: 0.7;">5 flavors for your box</p>
+
+            <ul class="instruction-list">
+                <li><i class="fas fa-check"></i> Artisan Handcrafted</li>
+                <li><i class="fas fa-check"></i> 80% Dark Cocoa</li>
+                <li><i class="fas fa-check"></i> Organic Ingredients</li>
+            </ul>
+
+            <button class="next-btn">NEXT STEP</button>
+        </div>
+
+        <!-- Right Panel: The Carousel -->
+        <div class="carousel-area">
+
+            <!-- Card 1:Dark chocolate -->
+            <div class="card">
+                <div class="img-box">
+                    <img src="assets/images/mix .png" alt="Dark Chocolate">
+                </div>
+                <h3>Dark chocolate</h3>
+                <div class="price">₹59</div>
+                <p>Pure cocoa essence. Robust, earthy, and intense.</p>
+            </div>
+
+            <!-- Card 2: Black Raisin -->
+            <div class="card">
+                <div class="img-box">
+                    <img src="assets/images/raisin.png" alt="Raisin Chocolate">
+                </div>
+                <h3>Black Raisin</h3>
+                <div class="price">₹62</div>
+                <p>Chewy sun-dried raisins in velvety chocolate.</p>
+            </div>
+
+            <!-- Card 3: Almond -->
+            <div class="card">
+                <div class="img-box">
+                    <img src="assets/images/almonds.png" alt="Almond Chocolate">
+                </div>
+                <h3>Almond</h3>
+                <div class="price">₹59</div>
+                <p>California almonds roasted for the perfect crunch.</p>
+            </div>
+
+            <!-- Card 4: Walnut -->
+            <div class="card">
+                <div class="img-box">
+                    <img src="assets/images/walnuts.png" alt="Walnut Chocolate">
+                </div>
+                <h3>Walnut</h3>
+                <div class="price">₹69</div>
+                <p>Earthy walnuts balanced with creamy sweetness.</p>
+            </div>
+
+            <!-- Card 5: Mix chocolate -->
+            <div class="card">
+                <div class="img-box">
+                    <img src="assets/images/mix .png" alt="Hazelnut Chocolate">
+                </div>
+                <h3>Plain mix chocolate</h3>
+                <div class="price">₹59</div>
+                <p>Plain mix chocolate in a rich, buttery ganache.</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

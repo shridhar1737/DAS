@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAS COCOA | Premium Dark Chocolate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Dancing+Script:wght@600&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;700&family=Cinzel:wght@400;600&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">DAS COCOA</div>
+        <div class="nav-links">
+            <a href="#home">HOME</a>
+            <a href="#intro">ABOUT</a>
+            <a href="#flavors">FLAVORS</a>
+            <a href="#nutrition">NUTRITION</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-bg">
+            <!-- User's brand image -->
+            <img src="assets/images/das_hero.png" alt="DAS COCOA Gift Box" class="hero-img">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content fade-up">
+            <p class="hero-subtitle">DREAMS ARE MADE OF</p>
+            <h1 class="hero-title">DARK CHOCOLATE</h1>
+        </div>
+
+        <div class="hero-slider-indicator">
+            <span class="current">01</span>
+            <div class="line"></div>
+            <span class="total">04</span>
+        </div>
+
+        <div class="hero-socials">
+            <a href="#">ENG</a> | <a href="#">FRN</a>
+        </div>
+    </header>
+
+    <!-- Intro Section (New Design) -->
+    <section id="intro" class="intro-section">
+        <div class="intro-container">
+            <!-- Left Side: Image -->
+            <div class="image-col fade-up">
+                <img src="assets/images/intro.png" alt="Stacked Chocolate Bars">
+            </div>
+
+            <!-- Right Side: Content -->
+            <div class="text-col fade-up delay-1">
+                <div class="sub-header">About Our Company</div>
+
+                <h2>WE CREATE <br>INCREDIBLY TASTY <br>CHOCOLATE</h2>
+
+                <p>
+                    We believe that chocolate is more than just a sweet treat; it is an experience.
+                    Sourced from the finest cocoa beans and crafted with passion, our chocolates
+                    offer a rich, velvety texture that melts in your mouth. Whether you prefer
+                    the intensity of dark cocoa or the creaminess of milk chocolate, we have
+                    perfected the art of flavor.
+                </p>
+
+                <div class="signature-block">
+                    <!-- Replace with your name -->
+                    <div class="signature">DAS</div>
+                    <div class="founder-title">Founder of Company</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Faint Background Text -->
+        <div class="bg-watermark">EXCLUSIVE CHOCOLATE & TREATS</div>
+    </section>
+
+    <!-- Featured Product / Carousel Section -->
+    <section id="flavors" class="carousel-section">
+        <div class="selection-wrapper">
+
+            <!-- Left Panel: Controls & Info -->
+            <div class="left-panel">
+                <div class="step-counter">
+                    <span class="active">1</span> 2 3
+                </div>
+
+                <h1>Choose your <br>indulgence</h1>
+
+                <div class="dots">••••••</div>
+                <p style="margin-bottom: 20px; font-size: 0.9rem; opacity: 0.7;">5 flavors for your box</p>
+
+                <ul class="instruction-list">
+                    <li><i class="fas fa-check"></i> Artisan Handcrafted</li>
+                    <li><i class="fas fa-check"></i> 80% Dark Cocoa</li>
+                    <li><i class="fas fa-check"></i> Organic Ingredients</li>
+                </ul>
+
+                <button class="next-btn">NEXT STEP</button>
+            </div>
+
+            <!-- Right Panel: The Carousel -->
+            <div class="carousel-area">
+
+                <!-- Card 1:Dark chocolate -->
+                <div class="card">
+                    <div class="img-box">
+                        <img src="assets/images/mix .png" alt="Dark Chocolate">
+                    </div>
+                    <h3>Dark chocolate</h3>
+                    <div class="price">₹59</div>
+                    <p>Pure cocoa essence. Robust, earthy, and intense.</p>
+                </div>
+
+                <!-- Card 2: Black Raisin -->
+                <div class="card">
+                    <div class="img-box">
+                        <img src="assets/images/raisin.png" alt="Raisin Chocolate">
+                    </div>
+                    <h3>Black Raisin</h3>
+                    <div class="price">₹62</div>
+                    <p>Chewy sun-dried raisins in velvety chocolate.</p>
+                </div>
+
+                <!-- Card 3: Almond -->
+                <div class="card">
+                    <div class="img-box">
+                        <img src="assets/images/almonds.png" alt="Almond Chocolate">
+                    </div>
+                    <h3>Almond</h3>
+                    <div class="price">₹59</div>
+                    <p>California almonds roasted for the perfect crunch.</p>
+                </div>
+
+                <!-- Card 4: Walnut -->
+                <div class="card">
+                    <div class="img-box">
+                        <img src="assets/images/walnuts.png" alt="Walnut Chocolate">
+                    </div>
+                    <h3>Walnut</h3>
+                    <div class="price">₹69</div>
+                    <p>Earthy walnuts balanced with creamy sweetness.</p>
+                </div>
+
+                <!-- Card 5: Mix chocolate -->
+                <div class="card">
+                    <div class="img-box">
+                        <img src="assets/images/mix .png" alt="Hazelnut Chocolate">
+                    </div>
+                    <h3>Plain mix chocolate</h3>
+                    <div class="price">₹59</div>
+                    <p>Plain mix chocolate in a rich, buttery ganache.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutritional Info Section -->
+    <section id="nutrition" class="section nutrition-section">
+        <div class="container column-center">
+            <h2 class="section-title centered fade-up" style="color: #2c3e50; margin-bottom: 80px;">NUTRITIONAL
+                <span>INFO</span>
+            </h2>
+
+            <div class="card-container fade-up delay-1">
+
+                <!-- Left Column (DAS) -->
+                <div class="col col-left">
+                    <div class="brand-pill pill-left">DAS</div>
+
+                    <div class="section-top">
+                        <div class="big-number">40</div>
+                        <div class="sub-label">CALORIES</div>
+                    </div>
+
+                    <div class="h-divider"></div>
+
+                    <div class="section-btm">
+                        <div class="big-number">120</div>
+                        <div class="sub-label">CALORIES</div>
+
+                        <div style="margin-top: 40px;"> <!-- Spacer for nutrient list alignment -->
+                            <div class="stat-val">9</div>
+                            <div class="stat-val">5</div>
+                            <div class="stat-val">9</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Middle Column (Labels & Images) -->
+                <div class="col col-mid">
+                    <!-- Top Image (Single Truffle) -->
+                    <img src="assets/images/truffle-removebg-preview.png" alt="Single Truffle" class="truffle-img-top">
+
+                    <div class="section-top">
+                        <div class="mid-label">Per truffle(12g)</div>
+                    </div>
+
+                    <!-- Middle Image (Five Truffles) -->
+                    <img src="assets/images/5.png" alt="Five Truffles" class="truffle-img-mid">
+
+                    <div class="mid-label">Per Serving(60g)</div>
+
+                    <div class="nutrient-list">
+                        <div class="nutrient-item">TOTAL FAT</div>
+                        <div class="nutrient-item">SATURATED FAT</div>
+                        <div class="nutrient-item">TOTAL SUGAR</div>
+                    </div>
+                </div>
+
+                <!-- Right Column (Lindt) -->
+                <div class="col col-right">
+                    <div class="brand-pill pill-right">
+                        <strong>Lindt lindor</strong>
+                        <span>Dark Chocolate Truffle</span>
+                    </div>
+
+                    <div class="section-top">
+                        <div class="big-number">77</div>
+                        <div class="sub-label">CALORIES</div>
+                    </div>
+
+                    <div class="h-divider"></div>
+
+                    <div class="section-btm">
+                        <div class="big-number">230</div>
+                        <div class="sub-label">CALORIES</div>
+
+                        <div style="margin-top: 40px;"> <!-- Spacer for nutrient list alignment -->
+                            <div class="stat-val">19</div>
+                            <div class="stat-val">15</div>
+                            <div class="stat-val">13</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Disclaimer Overlay -->
+                <div class="disclaimer-pill">
+                    *Calculated by dividing declared per serving value by Five
+                </div>
+
+            </div>
+
+            <button class="cta-btn fade-up delay-2">NUTRITIONAL FACTS & INGREDIENTS</button>
+        </div>
+    </section>
+
+    <!-- Parallax Banner -->
+    <section class="section parallax-banner">
+        <div class="parallax-content fade-up">
+            <h2>CLOSER TO LOVE <br> WITH EVERY BITE</h2>
+            <a href="#" class="btn-outline">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="contact-wrapper fade-up">
+            <!-- Left Side: Information Text -->
+            <div class="info-side">
+                <h2>Customer Support & Hours</h2>
+
+                <div class="info-block">
+                    <p>Monday - Friday : 9:00 am - 8:00 pm</p>
+                    <p>Saturday: 10:00 am - 9:00 pm</p>
+                    <p>Sunday: 10:00 am - 4:00 pm</p>
+                    <p>Holidays: Check Social Media</p>
+                </div>
+
+                <div class="container-split"
+                    style="display:flex; justify-content: space-between; gap:20px; flex-wrap: wrap;">
+                    <div class="info-block">
+                        <h4>Instant Pickup</h4>
+                        <p>Mon - Fri: 10am - 6pm</p>
+                        <p>Sat: 11am - 5pm</p>
+                        <p>Sun: Closed</p>
+                    </div>
+
+                    <div class="info-block">
+                        <h4>Bulk Orders</h4>
+                        <p>Mon - Fri: 9am - 5pm</p>
+                        <p>Requires 24hr Notice</p>
+                        <p>Contact for Wedding/Events</p>
+                    </div>
+                </div>
+
+                <p class="holiday-note">* On holidays we release special limited edition hampers, we will announce these
+                    dates in advance.</p>
+            </div>
+
+            <!-- Right Side: The Inquiry Form (Dark Card) -->
+            <div class="form-card">
+                <h3>Request a Callback</h3>
+                <p class="form-desc">
+                    After submitting this inquiry, we will call you to confirm availability and finalize payment
+                    details. Your name and phone number are required.
+                </p>
+
+                <form class="contact-form">
+                    <!-- Full Width Name -->
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name*" required>
+                    </div>
+
+                    <!-- Row: Phone & Flavor -->
+                    <div class="form-row">
+                        <input type="tel" placeholder="Phone Number*" required>
+
+                        <select required>
+                            <option value="" disabled selected>Select Flavour</option>
+                            <option value="dark">Plain Dark</option>
+                            <option value="raisin">Black Raisin</option>
+                            <option value="almond">Almond</option>
+                            <option value="walnut">Walnut</option>
+                            <option value="hazelnut">Hazelnut</option>
+                            <option value="assorted">Assorted Box</option>
+                        </select>
+                    </div>
+
+                    <!-- Row: Quantity & Date -->
+                    <div class="form-row">
+                        <input type="number" placeholder="Quantity (Boxes)" min="1">
+                        <input type="date" title="Required Date">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>DAS COCOA</h2>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Shop</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Shipping</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 DAS COCOA. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

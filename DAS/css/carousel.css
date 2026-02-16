@@ -1,0 +1,244 @@
+/* Carousel Section Variables */
+.carousel-section {
+    --choco-dark: #2b1b17;
+    --choco-med: #5d4037;
+    --bg-beige: #e8e0d5;
+    --card-white: #ffffff;
+    --accent-green: #89a688;
+    --accent-gold: #d4af37;
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--bg-beige);
+    width: 100%;
+    /* Replaces 100vw to fit layout */
+    overflow: hidden;
+    position: relative;
+    padding: 50px 0;
+    /* Replaces layout centering */
+}
+
+/* Ensure DM Sans is available or falls back */
+.carousel-section * {
+    box-sizing: border-box;
+}
+
+
+/* Main Container */
+.carousel-section .selection-wrapper {
+    position: relative;
+    width: 100%;
+    /* Ensure it takes full width of section */
+    max-width: 1400px;
+    margin: 0 auto;
+    /* Center content */
+    display: flex;
+    height: 600px;
+    /* Fixed height for the carousel area */
+    border-radius: 20px;
+    /* Rounded corners for the wrapper */
+    overflow: hidden;
+    /* Clip content */
+    background-color: var(--bg-beige);
+}
+
+/* --- Left Dark Panel --- */
+.carousel-section .left-panel {
+    width: 40%;
+    background-color: var(--choco-dark);
+    height: 100%;
+    color: white;
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    border-top-right-radius: 50% 100%;
+    border-bottom-right-radius: 50% 100%;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-section .step-counter {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    color: #aca09b;
+}
+
+.carousel-section .step-counter span.active {
+    color: white;
+    font-weight: bold;
+}
+
+.carousel-section .left-panel h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: white;
+    text-transform: none;
+}
+
+.carousel-section .dots {
+    color: var(--accent-gold);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 5px;
+}
+
+.carousel-section .instruction-list {
+    list-style: none;
+    margin-bottom: 50px;
+    padding: 0;
+}
+
+.carousel-section .instruction-list li {
+    font-size: 1.1rem;
+    color: #d7ccc8;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Next Button */
+.carousel-section .next-btn {
+    width: fit-content;
+    background-color: var(--accent-green);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-section .next-btn:hover {
+    transform: scale(1.05);
+    background-color: #769175;
+}
+
+/* --- Right Carousel Section --- */
+.carousel-section .carousel-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-left: 50px;
+    padding-right: 50px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.carousel-section .carousel-area::-webkit-scrollbar {
+    display: none;
+}
+
+/* Individual Card (Pill Shape) */
+.carousel-section .card {
+    flex: 0 0 260px;
+    height: 420px;
+    background-color: var(--card-white);
+    border-radius: 130px;
+    margin-right: 30px;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(62, 39, 35, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.carousel-section .card:hover {
+    transform: translateY(-10px);
+}
+
+.carousel-section .img-box {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+}
+
+.carousel-section .img-box img {
+    width: 140%;
+    height: auto;
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.25));
+    transition: transform 0.4s ease;
+    max-width: none;
+    /* Override global max-width */
+}
+
+.carousel-section .card:hover .img-box img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.carousel-section .card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--choco-dark);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.carousel-section .card p {
+    color: #8d6e63;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 1.4;
+    padding: 0 15px;
+    margin-bottom: auto;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+}
+
+.carousel-section .price {
+    font-weight: 700;
+    color: var(--choco-med);
+    margin-bottom: 10px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .carousel-section .selection-wrapper {
+        flex-direction: column;
+        height: auto;
+        /* Allow growing */
+    }
+
+    .carousel-section .left-panel {
+        width: 100%;
+        height: auto;
+        padding: 40px;
+        border-radius: 0 0 50px 50px;
+        text-align: center;
+    }
+
+    .carousel-section .instruction-list li {
+        justify-content: center;
+    }
+
+    .carousel-section .next-btn {
+        margin: 0 auto;
+    }
+
+    .carousel-section .carousel-area {
+        width: 100%;
+        padding: 40px 20px;
+        overflow-x: auto;
+    }
+}
